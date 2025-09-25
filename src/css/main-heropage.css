@@ -1,0 +1,70 @@
+.hero-page-wrapper {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay dengan warna gelap */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 4, 27, 0.5);
+  z-index: 1;
+}
+.hero-content {
+  z-index: 2;
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+}
+.hero-content h1 {
+  background-color: var(--color-secondary);
+  padding: 10px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 36px;
+}
+.hero-content h2 {
+  background-color: var(--color-secondary);
+  padding: 5px;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-family: var(--font-main);
+  width: 290px;
+  text-align: center;
+}
+.hero-content a {
+  background-color: var(--color-white);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  outline: none;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-family: var(--font-main);
+}
+.hero-content a:hover {
+  cursor: pointer;
+  background-color: var(--color-btn-hover);
+  transition: 0.2s ease-in-out;
+}

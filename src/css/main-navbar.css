@@ -1,0 +1,413 @@
+.golazo-navbar .golazo-navbar-top {
+  background-color: var(--color-secondary);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+}
+
+.golazo-navbar .golazo-navbar-top h2 {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.8s ease-in-out;
+  color: var(--color-primary);
+  font-family: var(--font-main);
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* Link di dalam teks */
+.golazo-navbar .golazo-navbar-top h2 a {
+  color: var(--color-primary);
+  font-family: var(--font-main);
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.golazo-navbar .golazo-navbar-top h2 a:hover {
+  color: var(--color-red2);
+  transition: 0.2s ease-in-out;
+}
+
+/* Saat aktif → fade in dari kiri ke tengah */
+.golazo-navbar .golazo-navbar-top h2.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Saat keluar → fade out ke kanan */
+.golazo-navbar .golazo-navbar-top h2.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.golazo-navbar-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.golazo-navbar-bottom .golazo-navbar-logo a img {
+  width: 100px;
+}
+.golazo-navbar-bottom .golazo-navbar-menu ul {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+.golazo-navbar-bottom .golazo-navbar-menu ul li a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 18px;
+  font-family: var(--font-main);
+}
+.golazo-navbar-bottom .golazo-navbar-menu ul li a:hover {
+  color: var(--color-white);
+  transition: 0.2s ease-in-out;
+}
+.golazo-navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.golazo-navbar-acc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+.golazo-navbar-acc .golazo-searchbar {
+  background-color: var(--color-white);
+  margin-right: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  border: 3.5px solid var(--color-secondary);
+  transition: border 0.2s ease-in-out;
+}
+
+.golazo-navbar-acc .golazo-searchbar input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-family: var(--font-main);
+  font-size: 14px;
+  width: 100%;
+}
+
+.golazo-navbar-acc .golazo-searchbar input::placeholder {
+  font-family: var(--font-main);
+  font-size: 14px;
+}
+.golazo-navbar-acc .golazo-searchbar ion-icon {
+  font-size: 14px;
+  color: var(--color-primary);
+}
+.golazo-favorite,
+.golazo-cart,
+.golazo-profile {
+  /* background-color: aqua; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+}
+.golazo-favorite ion-icon,
+.golazo-cart ion-icon,
+.golazo-profile ion-icon {
+  font-size: 32px;
+  color: var(--color-secondary);
+}
+.golazo-favorite .golazo-fav-count,
+.golazo-cart .golazo-cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+}
+.golazo-favorite .golazo-fav-count p,
+.golazo-cart .golazo-cart-count p {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--color-red2);
+  color: var(--color-primary);
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-weight: 800;
+}
+.collections-menu {
+  position: relative;
+}
+
+.golazo-all-cmenu,
+.golazo-product-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 50px;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  top: 18%;
+  left: 0;
+  width: 100vw;
+  background-color: var(--color-primary);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+}
+
+/* hover versi desktop */
+.collections-menu:hover .golazo-all-cmenu,
+.product-menu:hover .golazo-product-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* aktif versi react (klik) */
+.golazo-all-cmenu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.golazo-cmenus-mid2,
+.golazo-cmenus-left,
+.golazo-cmenus-mid1,
+.golazo-cmenus-right {
+  display: grid;
+  position: relative;
+}
+
+.golazo-cmenus-left .golazo-cmenu-title h3,
+.golazo-cmenus-mid1 .golazo-cmenu-title h3,
+.golazo-cmenus-mid2 .golazo-cmenu-title h3,
+.golazo-cmenus-right .golazo-cmenu-title h3 {
+  color: var(--color-secondary);
+  font-family: var(--font-main);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.golazo-cmenus-mid2 a,
+.golazo-cmenus-left a,
+.golazo-cmenus-mid1 a,
+.golazo-cmenus-right a {
+  font-family: var(--font-main) !important;
+  color: var(--color-white) !important;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.golazo-cmenus-mid2 a:hover,
+.golazo-cmenus-left a:hover,
+.golazo-cmenus-mid1 a:hover,
+.golazo-cmenus-right a:hover {
+  color: var(--color-secondary) !important;
+  transition: 0.2s ease-in-out;
+}
+
+.seeAll {
+  color: var(--color-secondary);
+  text-decoration: underline !important;
+}
+.seeAll:hover {
+  color: var(--color-btn-hover) !important;
+}
+
+.golazo-minimenu-title h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-family: var(--font-main);
+  color: var(--color-white);
+}
+.golazo-minimenu,
+.golazo-minimenu-cart {
+  position: fixed;
+  top: 19%;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-primary);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  font-family: var(--font-main);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+}
+
+.golazo-favorite:hover .golazo-minimenu,
+.golazo-cart:hover .golazo-minimenu-cart {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.golazo-minimenu table,
+.golazo-minimenu-cart table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.golazo-minimenu th,
+.golazo-minimenu td,
+.golazo-minimenu-cart th,
+.golazo-minimenu-cart td {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+}
+.golazo-minimenu td,
+.golazo-minimenu-cart td {
+  text-align: center;
+}
+
+.golazo-minimenu th,
+.golazo-minimenu-cart th {
+  font-weight: 600;
+  color: var(--color-secondary);
+  font-size: 14px;
+}
+
+.minimenu-img img {
+  width: 40px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.golazo-minimenu td a,
+.golazo-minimenu-cart td a {
+  color: var(--color-white);
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Jika teks terlalu panjang */
+}
+
+.golazo-minimenu td a:hover,
+.golazo-minimenu-cart td a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  transition: 0.2s ease-in-out;
+}
+
+.golazo-minimenu button,
+.golazo-minimenu-cart button {
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+.golazo-minimenu button ion-icon,
+.golazo-minimenu-cart button ion-icon {
+  font-size: 18px;
+}
+.golazo-minimenu button ion-icon:hover,
+.golazo-minimenu-cart button ion-icon:hover {
+  transition: 0.2s ease-in-out;
+  color: var(--color-red2);
+}
+.minimenu-detailsbtn {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+.minimenu-detailsbtn a {
+  background-color: var(--color-secondary);
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-decoration: none;
+  font-family: var(--font-main);
+  color: var(--color-primary);
+}
+.minimenu-detailsbtn a:hover {
+  background-color: var(--color-btn-hover);
+  transition: 0.3s ease-in-out;
+}
+
+.golazo-profile-minimenu {
+  position: fixed;
+  top: 19%;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-primary);
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* align-items: center; */
+  padding: 15px;
+  font-family: var(--font-main);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+}
+.golazo-profile:hover .golazo-profile-minimenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.golazo-profile-minimenu a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 16px;
+  text-align: right;
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 200;
+  font-family: var(--font-main);
+  margin-bottom: 15px;
+}
+.golazo-profile-minimenu a ion-icon {
+  font-size: 20px;
+  color: var(--color-red2);
+}
+.icon-profile {
+  justify-content: space-between !important;
+  color: var(--color-red2) !important;
+  margin-bottom: 0px !important;
+}
+.golazo-profile-minimenu a:hover {
+  color: var(--color-secondary);
+  transition: 0.2s ease-in-out;
+}

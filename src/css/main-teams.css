@@ -1,0 +1,92 @@
+.main-teams-wrapper {
+  padding: 50px;
+}
+
+/* Pilihan Tab */
+.main-teams-choice {
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.main-club-choice,
+.main-national-choice {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.main-club-choice.active,
+.main-national-choice.active {
+  background-color: var(--color-secondary);
+}
+
+.main-club-choice button,
+.main-national-choice button {
+  width: 100%;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-family: var(--font-main);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.main-club-choice:hover,
+.main-national-choice:hover {
+  background-color: var(--color-secondary);
+  transition: 0.2s ease-in-out;
+}
+
+/* Logo Teams */
+.main-team-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  cursor: -webkit-grab;
+}
+
+.main-team-logo a img {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  display: block;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid var(--color-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.main-team-logo a img:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Animasi Tab Switch */
+.main-teams-logo {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.main-teams-logo.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  position: relative;
+}
+
+.main-teams-logo.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}

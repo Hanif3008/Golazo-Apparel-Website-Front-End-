@@ -1,0 +1,50 @@
+/* 
+Fonts: Oswald, Franklin Gothic Demi Cond
+Colors:
+- primary = #03041B
+- secondary = #B5E956
+- white = #f1f1f1
+- red = #8C1007
+- red2 = #E62727
+- light-blue = #3396D3
+- dark-blue = #34699A
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
+:root {
+  /* Colors */
+  --color-primary: #03041b;
+  --color-secondary: #b5e956;
+  --color-white: #f1f1f1;
+  --color-red: #8c1007;
+  --color-red2: #e62727;
+  --color-light-blue: #3396d3;
+  --color-dark-blue: #34699a;
+  --color-btn-hover: #96a78d;
+  --color-rating: yellow;
+  --color-teams: #d9d9d9;
+
+  /* Fonts */
+  --font-main: "Oswald", sans-serif;
+  --font-alt: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/* Reset (biar konsisten di semua browser) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.none {
+  display: none;
+}
+ul li {
+  list-style-type: none;
+}
